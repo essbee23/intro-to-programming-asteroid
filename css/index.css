@@ -143,10 +143,22 @@ h2{
 }
 
 #messages{
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+
+#messages ul{
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(15, 14, 14);
+    height:fit-content;
+    width: fit-content;
+    border: 5px solid black;
+    border-radius:5%; 
+    box-shadow:-1px 0px 0px #759746, 0 0 5px #0c0d00, -2px 0px 7px #50cb86;
+}
 label{
     font-size: 14pt;
     text-shadow:-1px 0px 0px #759746, -1px 0px 7px #50cb86;
