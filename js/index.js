@@ -10,7 +10,7 @@ copyright.innerHTML="Sherose Badruddin "+ thisYear
 console.log(footer)
 footer.appendChild(copyright)
 
-const skills = ["Javascript","HTML","CSS","Ajax","JSON","Fetch API"]
+const skills = ["React", "Javascript","HTML","CSS","Ajax","JSON","Fetch API", "Ruby on Rails"]
 
 const skillsSection = document.querySelector("#skills")
 
@@ -64,7 +64,15 @@ fetch('https://api.github.com/users/essbee23/repos')
   
       for (let i = 0; i < repositories.length; i++) {
         const project = document.createElement("li")
-        project.innerText = repositories[i].name;
-        projectList.appendChild(project)
+        let linkProject = document.createElement("a");
+        linkProject.className = "project-link";
+        linkProject.href = repositories[i].html_url;
+        linkProject.target = "_blank";
+        linkProject.innerText = repositories[i].name;
+        project.className = "projects-li";
+        projectList.appendChild(project);
+        project.appendChild(linkProject)
+        // project.innerText = repositories[i].name;
+        // projectList.appendChild(project)
       }
     })
